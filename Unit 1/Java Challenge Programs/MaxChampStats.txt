@@ -1,0 +1,2 @@
+The champion with the highest HP is Tryndamere, who has 625.64 HP.
+The champion with the lowest armor is Orianna, who has 17.04 armor.
