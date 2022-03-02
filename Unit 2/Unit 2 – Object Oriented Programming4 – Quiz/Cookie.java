@@ -4,44 +4,56 @@
  * Date: March 1 2022
  * Description: Cookie
  */
- 
-import java.util.*;
 
 public class Cookie {
 
-   /*
+   /** 
    Attributes
    */
       
-   /** The name of the cookie */
+   /** 
+    * The name of the cookie 
+    */
    private String name;
    
-   /** The weight of the cookie */
+   /** 
+    * The weight of the cookie 
+    */
    private double weight;
 
-   /** The amount of calories in the cookie */
+   /** 
+    * The amount of calories in the cookie 
+    */
    private int calories;
    
-   /*
+   /**
    Constructor
    */
    
     public Cookie() {
     }
      
+    /**
+     * Cookie
+     * @param name
+     * @param calories
+     * @param weight
+     */
+
     public Cookie(String name, int calories, double weight) {
 
-        // initializing name
+        // initializing name 
         this.name = name;     
 
-        // initializing calories
+        // initializing calories 
         if (calories < 0) {
             this.calories = 0;
         } else {
             this.calories = calories;
         }
 
-        // initializing weight
+        // initializing weight 
+
         if (weight < 0) {
             this.weight = 0;
         } else {
@@ -50,7 +62,7 @@ public class Cookie {
 
     }
 
-    /*
+    /**
     Method
      */
 
@@ -78,7 +90,7 @@ public class Cookie {
         return this.weight;
     }
     
-    /*
+    /**
     Mutators
      */
 
@@ -90,10 +102,10 @@ public class Cookie {
     public void eaten(double weight) {
       if (weight > this.weight) {
       } else {
-         int caloriesEAten = (weight/this.weight) + caloriesEaten;
-         return caloriesEaten;
-        
-}
+         int caloriesEaten = (weight/this.weight) + caloriesEaten;
+      } 
+      return caloriesEaten;
+    }
 
     /**
     Returns all the attributes of the cookie in a String
@@ -101,7 +113,7 @@ public class Cookie {
   
     public String toString() {
     return " Name: " + name + " Weight: " + weight + " Calories: " + calories;
-      
+    }     
     
     }
     
