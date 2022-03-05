@@ -101,13 +101,15 @@ public class Vegetable {
 
     public int eaten(double weight) {
         if (weight > this.weight) {
-        int caloriesEaten = -1;
-    } else { 
-        caloriesEaten = (weight/this.weight);
-        
+        this.calories = -1;
+    } else if (weight > 0 && weight < this.weight) { 
+        this.calories = (int)((this.weight-weight)/this.weight)*this.calories;
+        this.weight = this.weight - weight;
+    } else {
+        this.weight = 0;
     }
-        return caloriesEaten;
-    }
+    return this.calories;
+}
 
      public String toString(){
         return " Name: " + name + " Weight: " + weight + " Calories: " + calories;

@@ -1,20 +1,35 @@
 /**
  * Name: Christopher Park
  * Teacher: Mr Lee
- * Date: March 1 2022
- * Description: OOQuizMain
+ * Date: Mar 01 2022
+ * Description:
+ * Create 1 humans
+ * Create 1 vegetable
+ * Create 3 cookies (use each of the constructors)
+ * One of the cookies should be packaged
+ * Person should try to eat packaged cookie
+ * Person should try to eat too much of a vegetable
+ * Person should eat a cookie and gain energy
  */
 
 public class Park_Christopher_OOQuiz1 {
-   public static void main (String [] args) { 
+   public static void main (String []args) {
 
-      Human humanOne = new Human("Chris", 65, 90); 
-      System.out.println(humanOne.getName()); 
-      System.out.println(humanOne.getName() + " is now " + humanOne.getWeight() + "kg and their energy level is at " + humanOne.getEnergyLevel() + "%."); 
-      System.out.println(humanOne.getName() + " is now " + humanOne.getWeight() + "kg and their energy level is at " + humanOne.getEnergyLevel() + "% after running for 5km."); 
-      System.out.println(humanOne.getName() + "'s energy level is at " + humanOne.getEnergyLevel() + "% after sleeping for 10 hours."); 
-      System.out.println(humanOne.toString()); 
-      System.out.println();
+    Human human1 = new Human ("Chris", 70, 50);
+
+    Vegetable vegetable1 = new Vegetable ("Lettuce", 10, 100);
+
+    Cookie cookie1 = new Cookie("ChipsAhoy", 25, 68, false);
+    Cookie cookie2 = new Cookie("Oreos", 20, 90, false);
+    Cookie cookie3 = new Cookie("Chocolate", 30, 50, true);
+
+    human1.eat(cookie3, 10);   
+    human1.eat(vegetable1, 999); 
+    human1.eat(cookie2, 5);      
+
+    System.out.println("Weight: " + human1.getWeight());
+    System.out.println("Energy Level: " + human1.getEnergyLevel());
 
    }
+
 }

@@ -23,6 +23,13 @@ public class Human {
   public Human() {
   }    
 
+  /**
+   * Human
+   * @param name
+   * @param weight
+   * @param energyLevel
+   */
+
   public Human(String name, double weight, int energyLevel){
     
     //initializing the attributes
@@ -36,7 +43,24 @@ public class Human {
     } else {
        this.energyLevel = energyLevel;
     }
+
+  }
     
+  /**
+  Description: Sets human energy level and ensures that it does not exceed 100 or go below 0
+  @param int newEnergyLevel
+  @return void
+  */
+
+  public void setEnergyLevel(int newEnergyLevel){
+    //energyLevel from 0 - 100
+    if (newEnergyLevel > 100){
+       this.energyLevel = 100;
+    } else if (newEnergyLevel < 0){
+       this.energyLevel = 0;
+    } else {
+       this.energyLevel = newEnergyLevel;
+    }
   }
 
   /**
@@ -65,6 +89,30 @@ public class Human {
   public int getEnergyLevel(){
     return this.energyLevel;
   }
+
+  /**
+  Description: Sets new name of human
+  @param String newName
+  @return void
+  */
+
+  public void setName(String newName){
+    this.name = newName;      
+  }
+
+  /**
+  Description: Sets new weight of human
+  @param double newWeight
+  @return void
+  */
+
+  public void setWeight(double newWeight){
+    this.weight = newWeight;
+  }
+
+  /**
+   Mutators
+   */
 
   /**
   Description:Raises energyLevel by hours * 10%
@@ -101,52 +149,45 @@ public class Human {
   }
 
   /**
-  Description: Sets new name of human
-  @param String newName
-  @return void
-  */
+   * Eating Vegetable
+   * @param veg
+   * @param grams
+   */
 
-  public void setName(String newName){
-    this.name = newName;      
-  }
-
-  /**
-  Description: Sets new weight of human
-  @param double newWeight
-  @return void
-  */
-
-  public void setWeight(double newWeight){
-    this.weight = newWeight;
-  }
-
-  /**
-  Description: Sets human energy level and ensures that it does not exceed 100 or go below 0
-  @param int newEnergyLevel
-  @return void
-  */
-
-  public void setEnergyLevel(int newEnergyLevel){
-    //energyLevel from 0 - 100
-    if (newEnergyLevel > 100){
-       this.energyLevel = 100;
-    } else if (newEnergyLevel < 0){
-       this.energyLevel = 0;
-    } else {
-       this.energyLevel = newEnergyLevel;
+  public void eat(Vegetable veg, double grams) {              
+    if (grams > this.weight) {
+        System.out.println("I don’t have that much food");  
+    } else if (grams < this.weight && grams > 0) {
+        this.weight = this.weight + grams;               
+        this.energyLevel = (int) ((veg.eaten(grams)/15)/this.energyLevel)+this.energyLevel;     
+    } else {   
+        grams = 0;
+        this.weight = grams;               
     }
-  }
-
-  public void eatVegtable(Vegtable veg, double grams) {
-    veg.eaten(grams);
-      
-    if (caloriesEaten <= 0)
-
-  }
+}
   
-  public void eatCookie(Cookie food, doublg grams) {
-    food.eaten(grams);
-  }
+  /**
+   * Eating cookie
+   * @param food
+   * @param grams
+   */
+
+  public void eat(Cookie food, double grams){            
+
+    if (food.isPackaged()) {                            
+        System.out.println("I can't eat the bag");
+    } else {
+        if (grams > this.weight) {
+            System.out.println("I don’t have that much food");  
+        } else if (grams < this.weight && grams > 0) {
+            this.weight = this.weight + grams;                 
+            this.energyLevel = (int) ((food.eaten(grams)/15)/this.energyLevel)+this.energyLevel;     
+        } else {    
+            grams = 0;
+            this.weight = grams;                  
+        }
+    }
+}
 
   /**
   Returns all the attributes of the human in a String
@@ -157,3 +198,4 @@ public class Human {
   }
 
 }
+
