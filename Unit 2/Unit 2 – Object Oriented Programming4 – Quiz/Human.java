@@ -53,6 +53,7 @@ public class Human {
   */
 
   public void setEnergyLevel(int newEnergyLevel){
+
     //energyLevel from 0 - 100
     if (newEnergyLevel > 100){
        this.energyLevel = 100;
@@ -172,19 +173,21 @@ public class Human {
    * @param grams
    */
 
-  public void eat(Cookie food, double grams){            
+  public void eat(Cookie food){            
 
-    if (food.isPackaged()) {                            
+    double foodinKg;
+    foodinKg = food.getWeight() / 1000;
+
+    int calories = food.getCalories();
+
+    if (food.getIsPackaged()) {                            
         System.out.println("I can't eat the bag");
     } else {
-        if (grams > this.weight) {
+        if (foodinKg > this.weight) {
             System.out.println("I don’t have that much food");  
-        } else if (grams < this.weight && grams > 0) {
-            this.weight = this.weight + grams;                 
-            this.energyLevel = (int) ((food.eaten(grams)/15)/this.energyLevel)+this.energyLevel;     
-        } else {    
-            grams = 0;
-            this.weight = grams;                  
+        } else if (foodinKg > 0) {
+            this.weight = this.weight + foodinKg;                 
+            this.energyLevel = this.energyLevel + (int) (calories/15);     
         }
     }
 }

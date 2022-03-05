@@ -17,15 +17,15 @@ public class Park_Christopher_OOQuiz1 {
 
     Human human1 = new Human ("Chris", 70, 50);
 
-    Vegetable vegetable1 = new Vegetable ("Lettuce", 10, 100);
+    Vegetable lettuce = new Vegetable ("Lettuce", 10, 100);
 
-    Cookie cookie1 = new Cookie("ChipsAhoy", 25, 68, false);
-    Cookie cookie2 = new Cookie("Oreos", 20, 90, false);
-    Cookie cookie3 = new Cookie("Chocolate", 30, 50, true);
+    Cookie chipsAhoy = new Cookie("ChipsAhoy", 250, 68, false);
+    Cookie oreo = new Cookie("Oreos", 200, 150, false);
+    Cookie chocolate = new Cookie("Chocolate", 300, 150, true);
 
-    human1.eat(cookie3, 10);   
-    human1.eat(vegetable1, 999); 
-    human1.eat(cookie2, 5);      
+    human1.eat(chocolate);   
+    human1.eat(lettuce, 999); 
+    human1.eat(oreo);      
 
     System.out.println("Weight: " + human1.getWeight());
     System.out.println("Energy Level: " + human1.getEnergyLevel());

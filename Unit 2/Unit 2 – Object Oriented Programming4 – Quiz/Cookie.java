@@ -25,6 +25,11 @@ public class Cookie {
      * The amount of calories in the cookie 
      */
     private int calories;
+
+    /** 
+     * Indicates if packaged
+     */
+    private boolean isPackaged;
     
     /**
     Constructor
@@ -59,6 +64,9 @@ public class Cookie {
             this.weight = weight;
         }
  
+        // initializing packaged
+        this.isPackaged = isPackaged;
+
     }
  
     /**
@@ -93,7 +101,7 @@ public class Cookie {
      * gets if packaged
      * @return if packaged
      */
-        public boolean isPackaged() {
+    public boolean getIsPackaged() {
         return this.isPackaged;
     }
     
@@ -106,7 +114,7 @@ public class Cookie {
      * @return caloriesEaten
      */
 
-     public void open () {
+     public void open() {
          isPackaged = false;
      }
 
