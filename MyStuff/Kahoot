@@ -1,0 +1,30 @@
+Analyzing Kahoot
+Name
+Christopher Park
+Class Diagram
+Link (has UML)
+https://docs.google.com/document/d/1XwWQs6HTr-9wFUWLSdfRFjCL_dtZy_hdOotUlDTPI6g/edit?usp=sharing
+Image
+
+Questions
+Design a 10th type of question.
+
+A 10th type of question that I would like to add would be a conversion question where there are 2 sides to the question that are open ended and the job of the people who chose one side to convince the host of their answer. Who is right and wrong is determined by the host.
+
+Describe how it works and why it might be useful. (2)
+- This type of question might serve to be useful as the people who play kahoot in a classroom setting usually stay quiet and don't know why they were wrong. This mode would act as a conversation starter to help students mainly
+What attributes would it have? (2)
+- Some of the attributes that this type of question would have are:
++secondsRemaining: int
++numOfAnswers: int
++options: String [2]
++option: boolean
+-hostAnswer: boolean
+What is its relationship to the other classes? (2)
+- The relationship that this would have to the other classes is that it would fall under the question class.
+Include a diagram of the class. (2)
+
+You are tasked to redesign Kahoot to be used in a setting outside of the school of your choice.  How might the classes change to tailor specifically for that application? Consider changes of relationships/attributes/methods. (2)
+Some of the features that are designed for school use would then become useless and have no purpose so the removal of features like discerning the different workspaces by asking if they are a student or a teacher. The classes would tailor to the specific needs of the user as well as the school features would not be used. This would probably cause more emphasis on the features outside of school use like subscriptions that can be purchased. I think that they would also have to change the website to not charge people for non school or personal use as its main purpose would be for outside school.
+ 
+
